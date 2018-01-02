@@ -4,7 +4,7 @@ import MdInkRipple from './components/mdInkRipple';
 import CoreTheme from './stylesheets/core.theme';
 
 /* Core Stylesheets */
-import './stylesheets/core.scss';
+// import './stylesheets/core.scss';
 
 export default function install(Vue) {
   if (install.installed) {
