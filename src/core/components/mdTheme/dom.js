@@ -24,7 +24,7 @@ if (process.env.VUE_ENV !== 'server') {
     const styleElement = head.querySelector('#' + styleId);
 
     if (!styleElement) {
-      var targetElement = head.querySelector('style')
+      var targetElement = head.querySelector('style');
       const newTag = document.createElement('style');
 
       newTag.type = 'text/css';

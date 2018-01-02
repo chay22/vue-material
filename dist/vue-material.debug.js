@@ -2429,13 +2429,18 @@ if (process.env.VUE_ENV !== 'server') {
     var styleElement = head.querySelector('#' + styleId);
 
     if (!styleElement) {
+      var targetElement = head.querySelector('style');
       var newTag = document.createElement('style');
 
       newTag.type = 'text/css';
       newTag.id = styleId;
       newTag.textContent = style;
 
-      head.appendChild(newTag);
+      if (!targetElement) {
+        targetElement = head.querySelector('link');
+      }
+
+      head.insertBefore(newTag, targetElement.nextSibling);
     } else {
       styleElement.textContent = style;
     }
